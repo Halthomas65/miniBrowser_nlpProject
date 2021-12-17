@@ -2,7 +2,7 @@ from tkinter import *
 from tkinter import messagebox
 
 W=Tk()
-W.geometry('1000x700+550+200')
+W.geometry('1000x700')
 W.title('Project')
 
 L1=Label(master=W,text='Input',font=('arial',20))
