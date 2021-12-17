@@ -118,7 +118,7 @@ def return_key_phrases(text, key_dilimiiter=KEY_DELIMITER):
         :param text: A string.
         :param key_dilimiiter: A string."""
 
-    keys = ex.extract_key_phrases(text)
+    keys = extract_key_phrases(text)
     
     key_append = ""
     for phrase in keys:
