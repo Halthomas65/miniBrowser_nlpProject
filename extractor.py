@@ -6,7 +6,7 @@ import networkx as nx
 import itertools
 import editdistance
 
-KEY_DELIMITER = " "
+KEY_DELIMITER = ", "
 
 
 def filter_for_tags(tagged, tags=['NN', 'JJ', 'NNP']):  # tags = ['NOUN', 'ADJ']
@@ -112,16 +112,16 @@ def extract_key_phrases(text):
     return modified_key_phrases
 
 
-def return_key_phrases(text, key_dilimiiter=KEY_DELIMITER):
+def return_key_phrases(text, key_delimiter=KEY_DELIMITER):
     """Return a sring of key phrases. Each phrase is separated by a space by default.
         
         :param text: A string.
-        :param key_dilimiiter: A string."""
+        :param key_delimiter: A string."""
 
     keys = extract_key_phrases(text)
     
     key_append = ""
     for phrase in keys:
-        key_append += phrase + key_dilimiiter
+        key_append += phrase + key_delimiter
 
     return str(key_append)
