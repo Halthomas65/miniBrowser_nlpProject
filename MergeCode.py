@@ -1,6 +1,8 @@
 from tkinter import *
 from tkinter import messagebox
 import nltk
+from extractor import *
+
 
 W=Tk()
 W.geometry('1000x700')
@@ -22,20 +24,6 @@ E1.place(x = 50, y = 70, height = 500, width= 300)
 E2 = Text(master=W, height = 5, width = 52, font=('arial',15))
 E2.grid(row = 1,column = 0,padx = 20,pady = 5,stick = 'w')
 E2.place(x = 500, y = 70, height = 500, width= 300)
-
-def return_key_phrases(text, key_delimiter=', '):
-    """Return a sring of key phrases. Each phrase is separated by a space by default.
-        
-        :param text: A string.
-        :param key_delimiter: A string."""
-
-    keys = extract_key_phrases(text)
-    
-    key_append = ""
-    for phrase in keys:
-        key_append += phrase + key_delimiter
-
-    return str(key_append)
 
 def B1_click():
     extract = return_key_phrases(E1.get("1.0", "end-1c"), ', ')
